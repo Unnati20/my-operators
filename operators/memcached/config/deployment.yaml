@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: memcached-operator
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: memcached-operator
+  template:
+    metadata:
+      labels:
+        app: memcached-operator
+    spec:
+      serviceAccountName: memcached-operator
+      containers:
+        - name: memcached-operator
+          image: memcached-operator:latest
+          imagePullPolicy: IfNotPresent

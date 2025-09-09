@@ -1,0 +1,7 @@
+apiVersion: mygroup.example.com/v1alpha1
+kind: Memcached
+metadata:
+  name: example-memcached
+  namespace: default
+spec:
+  size: 2
